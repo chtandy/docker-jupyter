@@ -1,0 +1,21 @@
+version: '3'
+services:
+  ubuntu:
+    image: jupyter:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: jupyter
+    hostname: jupyter
+    #command: bash
+    #tty: true
+    ports:
+      - '8080:8888'
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
