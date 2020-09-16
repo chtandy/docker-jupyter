@@ -25,8 +25,5 @@ RUN echo "######### install jupyter ##########" \
   && echo "c.NotebookApp.notebook_dir = '/data'" >> /root/.jupyter/jupyter_notebook_config.py \
   && echo "c.NotebookApp.default_url = '/tree'" >> /root/.jupyter/jupyter_notebook_config.py
 
-# install python packge
-RUN pip3 install ldap3
-
 ENTRYPOINT ["/usr/local/bin/jupyter", "notebook"]
 CMD ["--allow-root"]
