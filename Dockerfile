@@ -6,7 +6,7 @@ ENV LC_ALL="zh_TW.UTF-8"
 
 RUN echo "######### apt update ##########" \
   && apt-get update \
-  && apt-get install python3 python3-pip locales \
+  && apt-get install python3 python3-pip locales vim \
   --assume-yes \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
 
