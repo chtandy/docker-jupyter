@@ -11,7 +11,7 @@ RUN echo "######### apt update ##########" \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
 
 RUN echo "######### dash > bash ##########" \
-  && mv /bin/sh /bin/sh.old && ln -s bash /bin/sh
+  && mv /bin/sh /bin/sh.old && ln -s /bin/bash /bin/sh
 
 RUN echo "######### change locale Lang ##########" \
   && locale-gen zh_TW.UTF-8 && update-locale LANG=zh_TW.UTF-8
