@@ -16,6 +16,8 @@ RUN echo "######### dash > bash ##########" \
 RUN echo "######### change locale Lang ##########" \
   && locale-gen zh_TW.UTF-8 && update-locale LANG=zh_TW.UTF-8
 
+RUN ln -sf /bin/python3 /bin/python
+
 RUN echo "######### install jupyter ##########" \
   && pip3 install notebook \
   && jupyter notebook --generate-config \
